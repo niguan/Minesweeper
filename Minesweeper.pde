@@ -20,7 +20,7 @@ void setup ()
         for(int col = 0; col < NUM_COLS; col ++)
             buttons [row][col] = new MSButton (row,col);
     }
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 60; i++)
     {
         setBombs();
     }
@@ -77,12 +77,12 @@ public void displayWinningMessage()
     {
         if (bombs.get(i).isMarked() == true)
             {
-                buttons[9][7].setLabel("W");
-                buttons[9][8].setLabel("i");
-                buttons[9][9].setLabel("n");
-                buttons[9][10].setLabel("n");
-                buttons[9][11].setLabel("e");
-                buttons[9][12].setLabel("r");
+                buttons[1][7].setLabel("W");
+                buttons[1][8].setLabel("i");
+                buttons[1][9].setLabel("n");
+                buttons[1][10].setLabel("n");
+                buttons[1][11].setLabel("e");
+                buttons[1][12].setLabel("r");
             }
     }
 }
