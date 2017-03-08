@@ -20,7 +20,7 @@ void setup ()
         for(int col = 0; col < NUM_COLS; col ++)
             buttons [row][col] = new MSButton (row,col);
     }
-    for (int i = 0; i < 60; i++)
+    for (int i = 0; i < 3; i++)
     {
         setBombs();
     }
@@ -43,15 +43,48 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-    return false;
+    for (int row =0; row < NUM_ROWS; row++)
+        for (int col =0; col < NUM_COLS; col++)
+        {
+            if (bombs.contains(buttons[row][col])&&buttons[row][col].isMarked() == false)
+                return false;
+            else if (bombs.contains(buttons[row][col])==false&&buttons[row][col].isMarked())
+                return false;
+        }
+    return true;
 }
 public void displayLosingMessage()
 {
     //your code here
+    for(int i=0;i<bombs.size();i++)
+        if (bombs.get(i).isClicked()==false)
+        {
+            bombs.get(i).mousePressed();
+            buttons[9][6].setLabel("G");
+            buttons[9][7].setLabel("a");
+            buttons[9][8].setLabel("m");
+            buttons[9][9].setLabel("e");
+            buttons[9][11].setLabel("O");
+            buttons[9][12].setLabel("v");
+            buttons[9][13].setLabel("e");
+            buttons[9][14].setLabel("r");
+        }
 }
 public void displayWinningMessage()
 {
     //your code here
+    for(int i=0; i<bombs.size();i++)
+    {
+        if (bombs.get(i).isMarked() == true)
+            {
+                buttons[9][7].setLabel("W");
+                buttons[9][8].setLabel("i");
+                buttons[9][9].setLabel("n");
+                buttons[9][10].setLabel("n");
+                buttons[9][11].setLabel("e");
+                buttons[9][12].setLabel("r");
+            }
+    }
 }
 
 public class MSButton
@@ -83,8 +116,8 @@ public class MSButton
     // called by manager
     public void mousePressed () 
     {
-        clicked = true;
         //your code here
+        clicked = true;
         if (keyPressed == true)
         {
             marked =! marked;
@@ -123,7 +156,6 @@ public class MSButton
                     buttons[r+1][c+1].mousePressed();
         }
 }
-    
 
     public void draw () 
     {    
