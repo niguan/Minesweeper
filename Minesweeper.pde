@@ -60,14 +60,14 @@ public void displayLosingMessage()
         if (bombs.get(i).isClicked()==false)
         {
             bombs.get(i).mousePressed();
-            buttons[9][6].setLabel("G");
-            buttons[9][7].setLabel("a");
-            buttons[9][8].setLabel("m");
-            buttons[9][9].setLabel("e");
-            buttons[9][11].setLabel("O");
-            buttons[9][12].setLabel("v");
-            buttons[9][13].setLabel("e");
-            buttons[9][14].setLabel("r");
+            // buttons[9][6].setLabel("G");
+            // buttons[9][7].setLabel("a");
+            // buttons[9][8].setLabel("m");
+            // buttons[9][9].setLabel("e");
+            // buttons[9][11].setLabel("O");
+            // buttons[9][12].setLabel("v");
+            // buttons[9][13].setLabel("e");
+            // buttons[9][14].setLabel("r");
         }
 }
 public void displayWinningMessage()
